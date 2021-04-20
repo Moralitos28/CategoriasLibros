@@ -18,5 +18,13 @@
     <ClCompile Include="CategoriasLibros.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Libro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Libro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
