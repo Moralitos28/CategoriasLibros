@@ -4,7 +4,7 @@ ListaLibro::ListaLibro()
 {
 }
 
-void ListaLibro::Poner(NodoLibro* nodoNuevo)
+void ListaLibro::AgregarNodo(NodoLibro* nodoNuevo)
 {
 }
 
@@ -12,12 +12,12 @@ void ListaLibro::MostrarTodos()
 {
 }
 
-bool ListaLibro::esVacia()
+bool ListaLibro::EsVacia()
 {
     return false;
 }
 
-int ListaLibro::getLargo()
+int ListaLibro::GetLargo()
 {
     return 0;
 }

@@ -18,7 +18,7 @@ public:
 	/// Pone un nodo al final de la lista
 	/// </summary>
 	/// <param name="nodoNuevo"></param>
-	void Poner(NodoLibro* nodoNuevo);
+	void AgregarNodo(NodoLibro* nodoNuevo);
 
 	/// <summary>
 	/// Muestra todos los libros en la lista
@@ -29,13 +29,13 @@ public:
 	/// Muestra si la lista esta vacia.
 	/// </summary>
 	/// <returns></returns>
-	bool esVacia();
+	bool EsVacia();
 
 	/// <summary>
 	/// Mostrar cuantos elementos hay en la lista.
 	/// </summary>
 	/// <returns></returns>
-	int getLargo();
+	int GetLargo();
 
 	/// <summary>
 	/// Borrar un nodo de la lista.
