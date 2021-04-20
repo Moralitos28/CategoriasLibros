@@ -5,6 +5,7 @@
 
 int main()
 {
+    std::cout << "Hell!\n";
     std::cout << "Hello World!\n";
     std::cout << "Nicole\n";
 }
