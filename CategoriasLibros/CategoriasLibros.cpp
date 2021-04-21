@@ -2,14 +2,41 @@
 //
 
 #include <iostream>
+#include "libro.h"
 
-int main()
-{
-    std::cout << "Hello Saul & Braylie!\n";
-    std::cout << "Hell!\n";
-    std::cout << "Hello World!\n";
-    std::cout << "Nicole\n";
+Libro* l = new Libro();
+
+void registro() {
+
 }
+
+
+void procesarOpcion(int op) {	switch (op)	{	case 1:		registro();		break;	case 2:		l->desplegar();		break;	default:
+		break;
+
+	}
+}
+		void menu() {
+			string texto;
+			int op;
+			texto += "1. Registrar libro\n";
+			texto += "2. Listar libros\n";
+			texto += "0. Salir\n";
+			cout << "Seleccione la opcion de desea realizar\n" << endl;
+			cout << texto << endl;
+			cin >> op;
+			procesarOpcion(op);
+		}
+		
+
+
+int main(){
+
+	menu();
+}
+
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
