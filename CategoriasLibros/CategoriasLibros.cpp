@@ -31,7 +31,8 @@ void procesarOpcion(int op) {	switch (op)	{	case 1:		registro();		break;
 
 
 int main(){
-
+	//jhbgctfc
+	//jvjgvh
 	menu();
 }
 
