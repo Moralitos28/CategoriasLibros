@@ -8,11 +8,18 @@ class Categoria
 {
 
 private:
-	string codigo;
+	string nombre;
 	string descripcion;
 public:
-	Categoria(string Pcodigo, string Pdescripcion);
+	Categoria(string , string );
 	Categoria();
+
 	void desplegar();
+
+	string getNombre();
+	void setNombre(string);
+
+	string getDescrip();
+	void setDescrip(string);
 };
 

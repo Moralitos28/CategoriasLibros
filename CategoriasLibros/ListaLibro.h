@@ -1,47 +1,42 @@
 #pragma once
 #include "NodoLibro.h"
-/// <summary>
-/// Lista doble de libro.
-/// Contiene tipos de nodo que a su vez tienen libros.
-/// </summary>
+#include <fstream> 
+#include <fstream>
+#include <vector>
+#include <sstream>
 class ListaLibro
 {
 private:
-	NodoLibro* nodoCabeza;
-	NodoLibro* nodoFinal;
-	int longitud = 0;
+	NodoLibro* cabeza;
+	int longitud;
 public:
 
-	ListaLibro();
+    ListaLibro(NodoLibro*);//Constructor
+    ListaLibro();//Constructor
+    NodoLibro* getMHead() const;//GetMHead
+    void setMHead(NodoLibro*);//SetMHead
+    void add_head(NodoLibro*, NodoLibro*, NodoLibro*);
+    void add_ele(Libro*);
 
-	/// <summary>
-	/// Pone un nodo al final de la lista
-	/// </summary>
-	/// <param name="nodoNuevo"></param>
-	void AgregarNodo(NodoLibro* nodoNuevo);
+    int getLongitud();
+    void setLongitud(int);
 
-	/// <summary>
-	/// Muestra todos los libros en la lista
-	/// </summary>
-	void MostrarTodos();
+    void recorrerListaSimple();
+    void recorrerLibrosxCategoria(string);
+    void recorrerLibrosAgotados();
+    void recorrerLibrosNoAgotados();
+    void anadirPorcentaje(string, float);
+    int recorrerExistencia0();
+    void modificarLibro(int codigo, string autor, string editorial, string fechaLanzamiento, string titulo, float precio, int cantidadInventario);
+    void modificarLibroStatus(int codigo, int inventario);
+    bool getStatus(int codigo);
+    int precioTotalLibros();
 
-	/// <summary>
-	/// Muestra si la lista esta vacia.
-	/// </summary>
-	/// <returns></returns>
-	bool EsVacia();
 
-	/// <summary>
-	/// Mostrar cuantos elementos hay en la lista.
-	/// </summary>
-	/// <returns></returns>
-	int GetLargo();
+    void asociarCategoria(int codigo, string categoria);
+    bool eliminarLibro(int libro);
+    int buscarPosicionLibro(int libro);
 
-	/// <summary>
-	/// Borrar un nodo de la lista.
-	/// </summary>
-	/// <param name="nodoParaBorrar"></param>
-	void BorrarNodo(NodoLibro* nodoParaBorrar);
 
 };
 

@@ -4,17 +4,44 @@ using namespace std;
 class Libro
 {
 private:
-	string codigo;
+	int codigo;
 	string autor;
 	string titulo;
 	string editorial;
-	int fechaLanzamiento;
+	string fechaLanzamiento;
 	float precio;
 	int cantidadInventario;
+	string categoria;
 public:
-	Libro(string Pcodigo, string Pautor, string Peditorial, int PfechaLanzamiento,  float Pprecio, int PcantidadInventario);
+	Libro(int Pcodigo, string Pautor, string Peditorial, string PfechaLanzamiento, float Pprecio, int PcantidadInventario);
 	Libro();
+
 	bool agotado();
 	void desplegar();
+
+	int getCodigo();
+	void setCodigo(int _codigo);
+
+
+	string getCategoria();
+	void setCategoria(string);
+
+	string getAutor();
+	void setAutor(string);
+
+	string getTitulo();
+	void setTitulo(string);
+
+	string getEditorial();
+	void setEditorial(string);
+
+	string getfechaLanzamiento();
+	void setfechaLanzamiento(string);
+
+	float getPrecio();
+	void setPrecio(float);
+
+	int getCantidadInventario();
+	void setCantidadInventario(int);
 };
 

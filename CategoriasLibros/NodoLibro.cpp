@@ -1,20 +1,27 @@
-#include "PtrLibro.h"
+#include "NodoLibro.h"
 
-NodoLibro::NodoLibro(Libro pLibro)
+NodoLibro::NodoLibro(Libro* pLibro)
 {
+	setLibro(pLibro);
 }
 
-NodoLibro* NodoLibro::getSiguiente()
+NodoLibro::NodoLibro()
 {
-	return nullptr;
+	setSiguiente(NULL);
 }
 
-NodoLibro* NodoLibro::getAnterior()
+NodoLibro* NodoLibro::getSiguiente() const
 {
-	return nullptr;
+	return sgtLibro;
 }
 
-Libro* NodoLibro::getLibro()
-{
-	return nullptr;
+void NodoLibro::setSiguiente(NodoLibro* sig) {
+	NodoLibro::sgtLibro = sig;
+}
+
+Libro* NodoLibro::getLibro() const {
+	return libro;
+}
+void NodoLibro::setLibro(Libro* libro) {
+	NodoLibro::libro = libro;
 }

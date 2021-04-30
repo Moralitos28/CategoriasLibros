@@ -3,17 +3,16 @@
 class NodoLibro
 {
 private:
-	NodoLibro* antLibro;
+	Libro* libro;
 	NodoLibro* sgtLibro;
-	NodoLibro* cabeza;
-	Libro libro;
 public:
-	NodoLibro(Libro pLibro);
-	NodoLibro* getSiguiente();
-	NodoLibro* getAnterior();
-	Libro* getLibro();
+	NodoLibro(Libro* pLibro);
+	NodoLibro();
 
-
+	NodoLibro* getSiguiente() const;
+	void setSiguiente(NodoLibro* sig);
+	Libro* getLibro() const;
+	void setLibro(Libro* libro);
 
 };
 
