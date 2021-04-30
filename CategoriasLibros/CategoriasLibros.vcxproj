@@ -142,13 +142,17 @@
     <ClCompile Include="Categoria.cpp" />
     <ClCompile Include="CategoriasLibros.cpp" />
     <ClCompile Include="Libro.cpp" />
+    <ClCompile Include="ListaCategorias.cpp" />
     <ClCompile Include="ListaLibro.cpp" />
+    <ClCompile Include="NodoCategoria.cpp" />
     <ClCompile Include="NodoLibro.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Categoria.h" />
     <ClInclude Include="Libro.h" />
+    <ClInclude Include="ListaCategorias.h" />
     <ClInclude Include="ListaLibro.h" />
+    <ClInclude Include="NodoCategoria.h" />
     <ClInclude Include="NodoLibro.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

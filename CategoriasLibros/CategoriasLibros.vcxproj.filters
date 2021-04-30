@@ -30,19 +30,31 @@
     <ClCompile Include="Categoria.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListaCategorias.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoCategoria.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libro.h">
       <Filter>Source Files\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NodoLibro.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Categoria.h">
+      <Filter>Source Files\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ListaLibro.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Categoria.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="NodoLibro.h">
+      <Filter>Source Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaCategorias.h">
+      <Filter>Source Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoCategoria.h">
+      <Filter>Source Files\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
