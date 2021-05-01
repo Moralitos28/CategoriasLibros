@@ -22,6 +22,7 @@ public:
     void setLongitud(int);
 
     void recorrerListaSimple();
+    void recorrerListaSimpleAlveris();
     void recorrerLibrosxCategoria(string);
     void recorrerLibrosAgotados();
     void recorrerLibrosNoAgotados();

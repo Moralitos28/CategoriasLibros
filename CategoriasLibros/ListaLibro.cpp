@@ -101,6 +101,30 @@ void ListaLibro::recorrerListaSimple() {
     }
 }
 
+void ListaLibro::recorrerListaSimpleAlveris() {
+    if (getMHead() == NULL) {
+        std::cout << "Lista vacia" << "\n";
+    }
+    else {
+        NodoLibro* aux = getMHead();
+        int contador = 1;
+        int size = this->getLongitud();
+        
+        for (int x = size; x > 0; x--) {
+            for ( int y = 0; y < (x-1); y++)
+            {
+                aux = aux->getSiguiente();
+            }
+            std::cout << "\nLibro #" + to_string(contador) + "\n Autor: " + aux->getLibro()->getAutor() + "\n Editorial: " + aux->getLibro()->getEditorial()
+                + "\n Titulo: " + aux->getLibro()->getTitulo() + "\n Fecha lanzamiento: " + aux->getLibro()->getfechaLanzamiento() +
+                "\n Precio: " + to_string(aux->getLibro()->getPrecio()) + "\n Inventario: " + to_string(aux->getLibro()->getCantidadInventario())
+                + "\n Codigo: " << aux->getLibro()->getCodigo() << "\n";
+            aux = getMHead();
+            contador++;
+        }
+    }
+}
+
 int ListaLibro::precioTotalLibros() {
     if (getMHead() == NULL) {
         std::cout << "Lista vacia" << "\n";

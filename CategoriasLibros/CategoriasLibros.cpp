@@ -44,8 +44,8 @@ int main(){
 
 	//LLamadas de depuracion y dumy data
 	BulkAddLibros();
-
-	imprimirMenuPrincipal();
+	listaLibros.recorrerListaSimpleAlveris();
+	//imprimirMenuPrincipal();
 }
 
 void BulkAddLibros() {
@@ -129,7 +129,8 @@ void imprimirMenuLibros()
 		cout << "3. Modificar status de libro." << endl;
 		cout << "4. Eliminar libro." << endl;
 		cout << "5. Desplegar lista de libros." << endl;
-		cout << "6. Actualización de precio de libros." << endl;
+		cout << "6. Desplegar lista de libros alveris." << endl;
+		cout << "7. Actualización de precio de libros." << endl;
 		cout << "0. Salir." << endl;
 		cout << "-------------------------------------" << endl;
 		cin >> answer;
@@ -152,6 +153,9 @@ void imprimirMenuLibros()
 			listaLibros.recorrerListaSimple();
 			break;
 		case 6:
+			listaLibros.recorrerListaSimpleAlveris();
+			break;
+		case 7:
 			actualizarPorcentaje();
 			break;
 		default:
