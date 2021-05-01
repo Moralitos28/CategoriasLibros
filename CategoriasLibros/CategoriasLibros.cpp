@@ -54,6 +54,14 @@ int main(){
 	BulkAddCategorias();
 
 	listaCategoria.asociarCategoria(libro_cien, "Accion");
+	listaCategoria.asociarCategoria(libro_elretrato, "Accion");
+
+	listaCategoria.asociarCategoria(libro_elretrato, "Terror");
+	listaCategoria.asociarCategoria(libro_viejoymar, "Terror");
+
+	listaCategoria.asociarCategoria(libro_moscas, "Literatura");
+	listaCategoria.asociarCategoria(libro_drhyde, "Literatura");
+	listaCategoria.asociarCategoria(libro_cien, "Literatura");
 
 	imprimirMenuPrincipal();
 }
