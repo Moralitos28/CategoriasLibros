@@ -34,7 +34,40 @@ void ListaLibro::add_head(NodoLibro* aux1, NodoLibro* new_node, NodoLibro* aux2)
 void ListaLibro::add_ele(Libro* libro)
 {
     NodoLibro* new_node = new NodoLibro(libro);//Crea el NodoRecord
+    if (getLongitud() == 0) {
+        this->cabeza = new_node;
+    }
+    else {
+        NodoLibro* aux1 = this->cabeza;
+        NodoLibro* aux2;
+        if (aux1->getLibro()->getCodigo() < libro->getCodigo()) {
+            new_node->setSiguiente(aux1);
+            this->cabeza = new_node;
+        }
+        else
+        {
+            while (true)
+            {
+                aux2 = aux1;
+                if (aux1->getSiguiente() == nullptr) {
+                    aux1->setSiguiente(new_node);
+                    break;
+                }
+                aux1 = aux1->getSiguiente();
+                int codigo1 = aux1->getLibro()->getCodigo(), libroCode = libro->getCodigo();
+                if (codigo1 < libroCode) {
+                    new_node->setSiguiente(aux1);
+                    aux2->setSiguiente(new_node);
+                    break;
+                }
+            }
+        }
 
+    }
+
+    setLongitud(getLongitud() + 1);
+
+    /*
     NodoLibro* aux1 = this->getMHead();
     NodoLibro* aux2 = nullptr;//En aux2 == aux1.siguiente
     //Para insertar al medio o al final
@@ -45,7 +78,7 @@ void ListaLibro::add_ele(Libro* libro)
     //Para insertar al inicio
     add_head(aux1, new_node, aux2);
     new_node->setSiguiente(aux1);
-    setLongitud(getLongitud() + 1);
+    */
 }
 
 

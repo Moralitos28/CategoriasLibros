@@ -31,9 +31,30 @@ static Libro* libro = new Libro();
 static ListaLibro listaLibros;
 static ListaCategorias listaCategoria;
 
+//DATA DE PRUEBA
+Libro* libro_drhyde = new 	Libro(01, "DrHydeDrHeykil", "Flat", "CasaLibro", "2001", 15000, 0);
+Libro* libro_moscas = new 	Libro(02, "ElSenorDeLasMoscas", "William Golding", "CasaLibro", "1954", 5000, 10);
+Libro* libro_viejoymar = new 	Libro(03, "El Viejo Y El Mar", "Hemingway", "CasaLibro", "1951", 25000, 20);
+Libro* libro_elprincipe = new 	Libro(04, "El Principe", "Maquiavelo", "CasaLibro", "520", 12500, 10);
+Libro* libro_elretrato = new 	Libro(05, "El Retrato de Dorian Greay", "Oscar Wilde", "CasaLibro", "1890", 12000, 10);
+Libro* libro_cien = new 	Libro(06, "Cien annos de soledad", "Gabriel García Márquez", "CasaLibro", "1954", 5000, 10);
+void BulkAddLibros();
 
 int main(){
+
+	//LLamadas de depuracion y dumy data
+	BulkAddLibros();
+
 	imprimirMenuPrincipal();
+}
+
+void BulkAddLibros() {
+	listaLibros.add_ele(libro_cien);
+	listaLibros.add_ele(libro_moscas);
+	listaLibros.add_ele(libro_elretrato);
+	listaLibros.add_ele(libro_drhyde);
+	listaLibros.add_ele(libro_viejoymar);
+	listaLibros.add_ele(libro_elprincipe);
 }
 
 
@@ -271,34 +292,40 @@ void imprimirMenuReportesEstadisticas()
 //FUNCIONES DEL MENU DE LIBROS
 void agregarLibro()
 {
-	string titulo, editorial, autor, fechaLanzamiento;
-	int codigo;
-	float precio;
-	int cantidadInventario;
-	cout << "Favor digite el codigo del libro: " << flush;
-	cin >> codigo;
-	cout << "Favor digite el titulo del libro: " << flush;
-	cin >> titulo;
-	cout << "Favor digite el autor del libro: " << flush;
-	cin >> autor;
-	cout << "Favor digite la editorial del libro: " << flush;
-	cin >> editorial;
-	cout << "Favor digite la fecha de lanzamiento del libro: " << flush;
-	cin >> fechaLanzamiento;
-	cout << "Favor digite el precio del libro: " << flush;
-	cin >> precio;
-	cout << "Favor digite la cantidad de inventario deñ libro: " << flush;
-	cin >> cantidadInventario;
-	Libro* libro = new Libro();
-	libro->setAutor(autor);
-	libro->setCantidadInventario(cantidadInventario);
-	libro->setCodigo(codigo);
-	libro->setEditorial(editorial);
-	libro->setfechaLanzamiento(fechaLanzamiento);
-	libro->setPrecio(precio);
-	libro->setTitulo(titulo);
+	try {
+		string titulo, editorial, autor, fechaLanzamiento;
+		int codigo;
+		float precio;
+		int cantidadInventario;
+		cout << "Favor digite el codigo del libro: " << flush;
+		cin >> codigo;
+		cout << "Favor digite el titulo del libro: " << flush;
+		cin >> titulo;
+		cout << "Favor digite el autor del libro: " << flush;
+		cin >> autor;
+		cout << "Favor digite la editorial del libro: " << flush;
+		cin >> editorial;
+		cout << "Favor digite la fecha de lanzamiento del libro: " << flush;
+		cin >> fechaLanzamiento;
+		cout << "Favor digite el precio del libro: " << flush;
+		cin >> precio;
+		cout << "Favor digite la cantidad de inventario deñ libro: " << flush;
+		cin >> cantidadInventario;
+		Libro* libro = new Libro();
+		libro->setAutor(autor);
+		libro->setCantidadInventario(cantidadInventario);
+		libro->setCodigo(codigo);
+		libro->setEditorial(editorial);
+		libro->setfechaLanzamiento(fechaLanzamiento);
+		libro->setPrecio(precio);
+		libro->setTitulo(titulo);
 
-	listaLibros.add_ele(libro);
+		listaLibros.add_ele(libro);
+	}
+	catch (exception ex) {
+		cout << "Error re intente..." << endl;
+		agregarLibro();
+	}
 }
 
 void modificarInfoLibros()

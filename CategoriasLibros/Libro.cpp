@@ -1,8 +1,9 @@
 #include "Libro.h"
 
 //TODO : GENERATE CUSTO CONTRUCT TO LIBRO.
-Libro::Libro(int Pcodigo, string Pautor, string Peditorial, string PfechaLanzamiento, float Pprecio, int PcantidadInventario)
+Libro::Libro(int Pcodigo,string Ptitulo, string Pautor, string Peditorial, string PfechaLanzamiento, float Pprecio, int PcantidadInventario)
 {
+	setTitulo(Ptitulo);
 	setAutor(Pautor);
 	setCodigo(Pcodigo);
 	setEditorial(Peditorial);

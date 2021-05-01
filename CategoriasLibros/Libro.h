@@ -13,7 +13,7 @@ private:
 	int cantidadInventario;
 	string categoria;
 public:
-	Libro(int Pcodigo, string Pautor, string Peditorial, string PfechaLanzamiento, float Pprecio, int PcantidadInventario);
+	Libro(int Pcodigo, string titulo,  string Pautor, string Peditorial, string PfechaLanzamiento, float Pprecio, int PcantidadInventario);
 	Libro();
 
 	bool agotado();
