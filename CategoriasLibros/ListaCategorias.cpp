@@ -82,32 +82,45 @@ void ListaCategorias::modificarCategoria(string nombre, string descrip) {
     }
 }
 
-bool ListaCategorias::eliminarLibro(string nombre)
+bool ListaCategorias::eliminarLibro(int idLibro, string nombreCategoria)
 {
-    NodoCategoria* aux, * ant;
-    int i, pos = buscarPosicionLibro(nombre);
-    if (pos == -1) {
-        return false;
+    NodoCategoria* cabeza = this->getMHead();
+    
+    for (int i = 0; i < this->longitud; i++) {
+        if (cabeza->getCategoria()->getNombre() == nombreCategoria) {
+            cabeza->eliminarNodo(idLibro);
+            return true;
+        }
+        cabeza = cabeza->getSiguiente();
     }
-    else {
-        for (i = 1, ant = 0, aux = getMHead(); i < pos; i++) {
-            ant = aux;
-            aux = aux->getSiguiente();
-        }
-
-        if (ant != 0) {
-            ant->setSiguiente(aux->getSiguiente());
-        }
-        else {
-            setMHead(aux->getSiguiente());
-        }
-
-        delete aux;
-        setLongitud(getLongitud() - 1);
-        return true;
-    }
+    return false;
 }
 
+void ListaCategorias::eliminarCategoria(string categoria)
+{
+    
+    NodoCategoria* aux = this->getMHead(), *ant =  this->getMHead();
+    for (int i = 0; i < this->getLongitud(); i++) {
+        if (aux->getCategoria()->getNombre() == categoria) {
+            if (cabeza == aux) {
+                cabeza = aux->getSiguiente();
+            }
+            else {
+                ant->setSiguiente(aux->getSiguiente());
+            }
+            aux->eliminarNodos();
+            delete(aux);
+            this->setLongitud(getLongitud() - 1);
+            return;
+        }
+        ant = aux;
+        aux = aux->getSiguiente();
+
+    }
+
+
+
+}
 
 int ListaCategorias::buscarPosicionLibro(string nombre) {
     NodoCategoria* aux;
@@ -121,4 +134,35 @@ int ListaCategorias::buscarPosicionLibro(string nombre) {
         pos = -1;
     }
     return pos;
+}
+
+void ListaCategorias::asociarCategoria(Libro* libro, string nombreCategoria)
+{
+
+    NodoCategoria* cabeza = this->getMHead();
+
+    for (int i = 0; i < this->longitud; i++) {
+        if (cabeza->getCategoria()->getNombre() == nombreCategoria) {
+            
+            cabeza->agregarLibro(libro);
+
+            return;
+        }
+        cabeza = cabeza->getSiguiente();
+    }
+    return;
+}
+
+void ListaCategorias::RecorrerListaXCategoria(string nombreCategoria)
+{
+    NodoCategoria* cabeza = this->getMHead();
+
+    for (int i = 0; i < this->longitud; i++) {
+        if (cabeza->getCategoria()->getNombre() == nombreCategoria) {
+            cabeza->ImprimirLibros();
+            return;
+        }
+        cabeza = cabeza->getSiguiente();
+    }
+    return;
 }

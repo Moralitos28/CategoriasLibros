@@ -33,11 +33,12 @@ public:
     bool getStatus(int codigo);
     int precioTotalLibros();
 
-
+    void eliminarNodos();
     void asociarCategoria(int codigo, string categoria);
     bool eliminarLibro(int libro);
     int buscarPosicionLibro(int libro);
 
-
+    bool eliminarNodo(int libro);
+    Libro* getLibro(int libro);
 };
 

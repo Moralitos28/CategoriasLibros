@@ -34,6 +34,7 @@ void ListaLibro::setMHead(NodoLibro* cabeza) {
 int ListaLibro::getLongitud() {
     return longitud;
 }
+
 void ListaLibro::setLongitud(int longitud) {
     ListaLibro::longitud = longitud;
 }
@@ -324,6 +325,8 @@ bool ListaLibro::getStatus(int codigo) {
 }
 
 void ListaLibro::asociarCategoria(int codigo, string categoria) {
+    
+
     if (getMHead() == NULL) {
         std::cout << "Lista vacia" << "\n";
     }
@@ -332,7 +335,6 @@ void ListaLibro::asociarCategoria(int codigo, string categoria) {
         do {
             if (codigo == aux->getLibro()->getCodigo())
             {
-                aux->getLibro()->setCategoria(categoria);
                 std::cout << "Libro asociado" << "\n";
             }
 
@@ -380,4 +382,58 @@ int ListaLibro::buscarPosicionLibro(int libro) {
         pos = -1;
     }
     return pos;
+}
+
+bool ListaLibro::eliminarNodo(int libro)
+{
+    NodoLibro* aux, * ant;
+    int i, pos = buscarPosicionLibro(libro);
+    if (pos == -1) {
+        return false;
+    }
+    else {
+        for (i = 1, ant = 0, aux = getMHead(); i < pos; i++) {
+            ant = aux;
+            aux = aux->getSiguiente();
+        }
+
+        if (ant != 0) {
+            ant->setSiguiente(aux->getSiguiente());
+        }
+        else {
+            setMHead(aux->getSiguiente());
+        }
+        delete aux;
+        setLongitud(getLongitud() - 1);
+        return true;
+    }
+}
+
+Libro* ListaLibro::getLibro(int libro)
+{
+    NodoLibro* aux;
+    int i, pos = buscarPosicionLibro(libro);
+    if (pos == -1) {
+        return NULL;
+    }
+    else {
+        for (i = 1, aux = getMHead(); i < pos; i++) {
+            aux = aux->getSiguiente();
+        }
+
+        return aux->getLibro();
+    }
+}
+
+
+void ListaLibro::eliminarNodos() {
+    int i = this->getLongitud();
+    NodoLibro* aux = this->getMHead(), *sig;
+    for (int x = 0; x < i; x++) {
+        sig = aux->getSiguiente();
+        delete(aux);
+        aux = sig;
+    }
+    cabeza = nullptr;
+    setLongitud(0);
 }

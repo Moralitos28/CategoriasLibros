@@ -6,6 +6,7 @@ class NodoCategoria
 private:
 	Categoria* categoria;
 	NodoCategoria* sgtLibro;
+	NodoCategoria* antLibro;
 	ListaLibro* listaInternaLibros;
 public:
 	NodoCategoria(Categoria*);
@@ -16,6 +17,11 @@ public:
 	Categoria* getCategoria() const;
 	void setCategoria(Categoria*);
 
-
-
+	void eliminarLibro(int id);
+	void agregarLibro(Libro* libro);
+	
+	//Eliminar nodo por libro.
+	void eliminarNodo(int idLibro);
+	void eliminarNodos();
+	void ImprimirLibros();
 };

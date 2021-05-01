@@ -40,6 +40,7 @@ Libro* NodoLibro::getLibro() {
 		return libro;
 
 }
+
 void NodoLibro::setLibro(Libro* libro) {
 	NodoLibro::libro = libro;
 }

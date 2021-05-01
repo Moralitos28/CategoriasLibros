@@ -41,18 +41,21 @@ Libro* libro_cien = new 	Libro(06, "Cien annos de soledad", "Gabriel García Márq
 void BulkAddLibros();
 static ListaLibro listaLibros1;
 void BulkAddLibros1();
-
+void BulkAddCategorias();
+Categoria* categoria_terror = new Categoria("Terror", "Terror");
+Categoria* categoria_accion = new Categoria("Literatura", "Literatura");
+Categoria* categoria_literatura = new Categoria("Accion", "Accion");
 
 int main(){
 
 	//LLamadas de depuracion y dumy data
 	BulkAddLibros();
-	BulkAddLibros1();
-	listaLibros.eliminarLibro(6);
-	listaLibros.recorrerListaSimpleAlveris();
-	system("pause");
-	listaLibros1.recorrerListaSimple();
-	//imprimirMenuPrincipal();
+
+	BulkAddCategorias();
+
+	listaCategoria.asociarCategoria(libro_cien, "Accion");
+
+	imprimirMenuPrincipal();
 }
 
 void BulkAddLibros() {
@@ -72,6 +75,12 @@ void BulkAddLibros1() {
 	listaLibros1.add_ele(libro_elprincipe);
 }
 
+void BulkAddCategorias() {
+	listaCategoria.add_ele(categoria_terror);
+	listaCategoria.add_ele(categoria_accion);
+	listaCategoria.add_ele(categoria_literatura);
+
+}
 
 //MENUS
 void imprimirMenuPrincipal()
@@ -435,12 +444,7 @@ void eliminarCategoria() {
 	string codigo;
 	cout << "Favor digite el nombre de la categoria: " << flush;
 	cin >> codigo;
-	if (listaCategoria.eliminarLibro(codigo)) {
-		cout << "Categoria eliminada correctamente \n" << flush;
-	}
-	else {
-		cout << "No se encuentra la categoria ingresado \n" << flush;
-	}
+	listaCategoria.eliminarCategoria(codigo);
 }
 
 void asociarLibroACategoria() {
@@ -450,8 +454,8 @@ void asociarLibroACategoria() {
 	cin >> nombre;
 	cout << "Favor digite el codigo del libro: " << flush;
 	cin >> codigo;
-
-	listaLibros.asociarCategoria(codigo,nombre);
+	Libro* libro = listaLibros.getLibro(codigo);
+	listaCategoria.asociarCategoria(libro, nombre);
 }
 
 //FUNCIONES DEL MENU DE REPORTES
@@ -461,7 +465,7 @@ void imprimirLibrosCategoria() {
 	cout << "Favor digite el nombre de la categoria: " << flush;
 	cin >> nombre;
 
-	listaLibros.recorrerLibrosxCategoria(nombre);
+	listaCategoria.RecorrerListaXCategoria(nombre);
 }
 
 void cantidadExistencia0(){

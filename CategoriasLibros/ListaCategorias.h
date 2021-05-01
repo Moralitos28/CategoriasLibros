@@ -24,7 +24,10 @@ public:
 
     void recorrerListaSimple();
     void modificarCategoria(string, string);
-    bool eliminarLibro(string);
+    bool eliminarLibro(int, string);
+    void eliminarCategoria(string);
     int buscarPosicionLibro(string);
 
+    void asociarCategoria(Libro*, string);
+    void RecorrerListaXCategoria(string);
 };
