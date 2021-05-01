@@ -9,9 +9,9 @@ public:
 	NodoLibro(Libro* pLibro);
 	NodoLibro();
 
-	NodoLibro* getSiguiente() const;
+	NodoLibro* getSiguiente();
 	void setSiguiente(NodoLibro* sig);
-	Libro* getLibro() const;
+	Libro* getLibro();
 	void setLibro(Libro* libro);
 
 };

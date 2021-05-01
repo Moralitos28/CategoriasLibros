@@ -16,6 +16,7 @@ public:
 	Libro(int Pcodigo, string titulo,  string Pautor, string Peditorial, string PfechaLanzamiento, float Pprecio, int PcantidadInventario);
 	Libro();
 
+	bool deleted = true;
 	bool agotado();
 	void desplegar();
 

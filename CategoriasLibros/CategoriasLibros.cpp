@@ -39,12 +39,19 @@ Libro* libro_elprincipe = new 	Libro(04, "El Principe", "Maquiavelo", "CasaLibro
 Libro* libro_elretrato = new 	Libro(05, "El Retrato de Dorian Greay", "Oscar Wilde", "CasaLibro", "1890", 12000, 10);
 Libro* libro_cien = new 	Libro(06, "Cien annos de soledad", "Gabriel García Márquez", "CasaLibro", "1954", 5000, 10);
 void BulkAddLibros();
+static ListaLibro listaLibros1;
+void BulkAddLibros1();
+
 
 int main(){
 
 	//LLamadas de depuracion y dumy data
 	BulkAddLibros();
+	BulkAddLibros1();
+	listaLibros.eliminarLibro(6);
 	listaLibros.recorrerListaSimpleAlveris();
+	system("pause");
+	listaLibros1.recorrerListaSimple();
 	//imprimirMenuPrincipal();
 }
 
@@ -55,6 +62,14 @@ void BulkAddLibros() {
 	listaLibros.add_ele(libro_drhyde);
 	listaLibros.add_ele(libro_viejoymar);
 	listaLibros.add_ele(libro_elprincipe);
+}
+void BulkAddLibros1() {
+	listaLibros1.add_ele(libro_cien);
+	listaLibros1.add_ele(libro_moscas);
+	listaLibros1.add_ele(libro_elretrato);
+	listaLibros1.add_ele(libro_drhyde);
+	listaLibros1.add_ele(libro_viejoymar);
+	listaLibros1.add_ele(libro_elprincipe);
 }
 
 

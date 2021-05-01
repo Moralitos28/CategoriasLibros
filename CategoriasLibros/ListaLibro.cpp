@@ -8,9 +8,25 @@ ListaLibro::ListaLibro(NodoLibro* cabeza)
     setMHead(cabeza);
 }
 
-NodoLibro* ListaLibro::getMHead() const {
+NodoLibro* ListaLibro::getMHead() {
+
+
+    if (cabeza != nullptr && cabeza->getLibro() == NULL) {
+        NodoLibro* aux = cabeza;
+        setLongitud(getLongitud() - 1);
+        if(cabeza->getSiguiente() == nullptr){
+            cabeza = nullptr;
+        }
+        else {
+            cabeza = cabeza->getSiguiente();
+            delete aux;
+            return getMHead();
+        }
+    }
+
     return cabeza;
 }
+
 void ListaLibro::setMHead(NodoLibro* cabeza) {
     ListaLibro::cabeza = cabeza;
 }
@@ -80,8 +96,6 @@ void ListaLibro::add_ele(Libro* libro)
     new_node->setSiguiente(aux1);
     */
 }
-
-
 
 void ListaLibro::recorrerListaSimple() {
     if (getMHead() == NULL) {
@@ -346,13 +360,13 @@ bool ListaLibro::eliminarLibro(int libro)
         else {
             setMHead(aux->getSiguiente());
         }
-
+        Libro* libro = aux->getLibro();
         delete aux;
+        libro->deleted = true;
         setLongitud(getLongitud() - 1);
         return true;
     }
 }
-
 
 int ListaLibro::buscarPosicionLibro(int libro) {
     NodoLibro* aux;

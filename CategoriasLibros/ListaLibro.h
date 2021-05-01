@@ -13,7 +13,7 @@ public:
 
     ListaLibro(NodoLibro*);//Constructor
     ListaLibro();//Constructor
-    NodoLibro* getMHead() const;//GetMHead
+    NodoLibro* getMHead();//GetMHead
     void setMHead(NodoLibro*);//SetMHead
     void add_head(NodoLibro*, NodoLibro*, NodoLibro*);
     void add_ele(Libro*);

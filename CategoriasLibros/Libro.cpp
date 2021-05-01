@@ -3,6 +3,8 @@
 //TODO : GENERATE CUSTO CONTRUCT TO LIBRO.
 Libro::Libro(int Pcodigo,string Ptitulo, string Pautor, string Peditorial, string PfechaLanzamiento, float Pprecio, int PcantidadInventario)
 {
+	this->deleted = false;
+
 	setTitulo(Ptitulo);
 	setAutor(Pautor);
 	setCodigo(Pcodigo);
@@ -14,6 +16,7 @@ Libro::Libro(int Pcodigo,string Ptitulo, string Pautor, string Peditorial, strin
 
 Libro::Libro()
 {
+	this->deleted = false;
 }
 
 string Libro::getAutor() { return this->autor; }

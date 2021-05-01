@@ -3,11 +3,14 @@
 NodoCategoria::NodoCategoria(Categoria* categoria)
 {
 	setCategoria(categoria);
+	this->listaInternaLibros = new ListaLibro();
 }
 
 NodoCategoria::NodoCategoria()
 {
 	setSiguiente(NULL);
+	this->listaInternaLibros = new ListaLibro();
+
 }
 
 NodoCategoria* NodoCategoria::getSiguiente() const
